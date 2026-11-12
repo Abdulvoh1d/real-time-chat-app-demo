@@ -1,27 +1,60 @@
-# Huddle — Real-Time Chat App (local demo)
+# Huddle House — Real-Time Chat App
 
-A compact, responsive workspace-style chat interface built with plain HTML, CSS, and browser JavaScript. This is a **local interaction demo**, not a live chat service.
+Huddle House — xonalar, namunaviy suhbatlar va brauzerda saqlanadigan xabarlarni ko‘rsatadigan, serverga ulanmaydigan chat interfeysi demosidir.
 
-## What works in this demo
+## Havolalar
 
-- Switch between `#general`, `#design`, `#product`, and `#weekend-plans`; each channel has its own conversation history.
-- Read fictional sample messages with timestamps, then compose and add your own messages to the currently selected channel.
-- Press **Enter** to add a message, or **Shift+Enter** to insert a new line. A character count and empty-message guard are included.
-- Conversations persist in this browser's `localStorage`, so they remain after reloading this page in this browser. **Reset sample data** restores the fictional starting conversations after confirmation.
-- On narrow screens, open and close the channel navigation using the menu button, close button, backdrop, or Escape key.
+- [Jonli demo](https://real-time-chat-demo-17zl.netlify.app)
+- [GitHub repository](https://github.com/Abdulvoh1d/real-time-chat-app-demo)
 
-## Sample data and limitations
+## Loyiha nimani ko‘rsatadi
 
-Names and pre-filled messages are fictional sample data. Messages you compose are saved only in this browser on this device. They are **not sent, delivered, synchronized, or visible to other people**. There is no WebSocket, server, account, or network connection. This demo does not provide real-time chat.
+Loyiha chat ilovasiga o‘xshash ish maydoni interfeysini namoyish etadi: xona tanlash, suhbatlarni ko‘rish va mahalliy qayd qo‘shish. Barcha muloqot bitta brauzerda namoyish qilinadi; boshqa foydalanuvchilar bilan bog‘lanmaydi.
 
-The reference technology list—**React, Node.js, Socket.IO, WebSocket**—describes a possible full-stack version only; none of those technologies or any network transport is connected by this no-build browser demo. This project uses no framework, package manager, external API, external script, remote asset, or network request. Browser storage may be unavailable in private/restricted contexts; in that case, messages may not persist after closing the page.
+## Funksiyalar
 
-## Launch
+- `#general`, `#design`, `#product` va `#weekend-plans` xonalari orasida o‘tish; har birida alohida suhbat tarixi bor.
+- Ismlar va oldindan kiritilgan xabarlar — uydirma namuna ma’lumotlari.
+- Faol xonaga matnli xabar qo‘shish. `Enter` xabarni saqlaydi, `Shift+Enter` yangi qator kiritadi; bo‘sh xabar yuborilmaydi, matn 2 000 belgi bilan cheklangan.
+- Xabarlar va vaqt belgilari ko‘rsatiladi; yozish maydoni matnga mos kengayadi va belgi sanagichi ishlaydi.
+- Xabarlar brauzerning `localStorage` xotirasida saqlanadi va shu brauzerda qayta ochilganda tiklanadi. **Reset sample data** tugmasi tasdiqlangach, namunaviy suhbatlarni tiklaydi.
+- Kichik ekranlarda yon navigatsiyani menyu, yopish tugmasi, fon qatlami yoki `Escape` tugmasi orqali boshqarish mumkin.
 
-Open a terminal in this folder and run:
+## Texnologiyalar
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Tasdiqlangan brauzer imkoniyatlari: `localStorage`, `matchMedia`, `Intl.DateTimeFormat` va `confirm()`.
+
+Framework, backend, ma’lumotlar bazasi, tashqi API, to‘lov tizimi yoki WebSocket ishlatilmaydi. Paket o‘rnatish va loyihani yig‘ish talab qilinmaydi.
+
+## Talablar va mahalliy ishga tushirish
+
+`git`, `python3` va zamonaviy brauzer kerak. Repozitoriyani klonlab, uning papkasiga kiring va statik fayllarni oddiy HTTP server orqali ishga tushiring:
 
 ```bash
+git clone https://github.com/Abdulvoh1d/real-time-chat-app-demo.git
+cd real-time-chat-app-demo
 python3 -m http.server 8765
 ```
 
-Then open [http://localhost:8765](http://localhost:8765).
+So‘ng [http://localhost:8765](http://localhost:8765) manzilini brauzerda oching. `npm install` yoki build bosqichi kerak emas.
+
+## Fayl tuzilishi
+
+```text
+real-time-chat-app-demo/
+├── index.html   # Sahifa tuzilishi, navigatsiya va xabar yozish qismi
+├── styles.css   # Ko‘rinish va ekran o‘lchamlariga moslashuv
+├── app.js       # Xona tanlash, xabarlar va localStorage logikasi
+└── README.md    # Loyiha haqidagi ma’lumot
+```
+
+## Ma’lumotlar, maxfiylik va demo chegaralari
+
+Bu **haqiqiy real-time chat emas, faqat mahalliy simulyatsiya**. Ko‘rsatilgan suhbatlar uydirma namunalar; siz qo‘shgan xabarlar faqat shu qurilmadagi brauzerning `localStorage` xotirasida saqlanadi. Xabarlar boshqa foydalanuvchilarga jo‘natilmaydi, sinxronlanmaydi va ularga ko‘rinmaydi. Backend, foydalanuvchi hisobi yoki real vaqtli uzatish mavjud emas. Brauzer xotirasi cheklangan yoki o‘chirilgan bo‘lsa, xabarlar sahifa yopilgach saqlanib qolmasligi mumkin. **Reset sample data** tasdiqlangach, ushbu brauzerdagi demo xabarlarini dastlabki uydirma namunalar bilan almashtiradi.
+
+## Litsenziya
+
+Repozitoriyada `LICENSE` fayli yo‘q. Repozitoriyaning ommaviy ekanligi o‘z-o‘zidan ochiq litsenziya bermaydi; undan foydalanish, o‘zgartirish yoki tarqatish huquqini beruvchi litsenziya ko‘rsatilmagan.
